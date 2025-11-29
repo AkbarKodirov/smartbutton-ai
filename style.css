@@ -257,3 +257,49 @@ a { text-decoration:none; color:inherit; }
   .stat-card h3 { font-size: 2.2rem; }
 }
 
+/* ===== PROBLEM SECTION V6 (animated, evidence-based) ===== */
+.problem-v6 {
+  padding: 110px 5% 90px;
+  background: linear-gradient(180deg,#f7fbff 0%, #eef6ff 100%);
+  color: #071130;
+  text-align: center;
+  margin-bottom: 32px;
+  border-radius: 10px;
+}
+.pv-title { font-size: 2.6rem; font-weight: 900; color:#002855; margin-bottom: 6px; }
+.pv-sub { font-size: 1.05rem; color:#243449; max-width:980px; margin: 0 auto 28px; line-height:1.6; }
+
+/* Chart */
+.chart-wrap.v6 { max-width: 980px; margin: 0 auto 18px; position: relative; }
+#safetyChart { width:100% !important; height: 420px !important; background: transparent; border-radius:10px; box-shadow: 0 14px 40px rgba(10,95,255,0.06); padding: 6px; }
+
+/* Legend */
+.chart-legend.v6 {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #213447;
+  opacity: 0.95;
+  display: inline-block;
+}
+.legend-dot { display:inline-block; width:14px; height:14px; border-radius:50%; margin-right:8px; vertical-align:middle; }
+.legend-dot.global { background: #3b82f6; box-shadow: 0 2px 8px rgba(59,130,246,0.18); }
+.legend-dot.uzb { background: #ef4444; box-shadow: 0 2px 8px rgba(239,68,68,0.18); }
+
+/* Typing text */
+.typing-box.v6 { max-width: 920px; margin: 22px auto 0; min-height: 120px; text-align:left; }
+.typed-text { font-size: 1.12rem; color: #0b2140; line-height: 1.7; white-space: pre-wrap; }
+.typed-note { margin-top: 12px; font-size: 0.94rem; color: #264055; opacity: 0.9; }
+
+/* compact sources */
+.sources-compact { margin-top: 16px; font-size: 0.93rem; color:#18304a; }
+.sources-compact a { color: #0a5fff; text-decoration: underline; }
+
+/* responsive */
+@media (max-width: 768px) {
+  #safetyChart { height: 320px !important; }
+  .pv-title { font-size: 1.9rem; }
+  .typed-text { font-size: 1rem; }
+  .chart-wrap.v6 { padding: 0 6px; }
+}
+
+
