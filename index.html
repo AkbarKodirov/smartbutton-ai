@@ -27,18 +27,30 @@
     <div class="floating-shapes"><div class="shape"></div><div class="shape"></div></div>
   </section>
 
-  <!-- PROBLEM & SOLUTION -->
- <section id="problem" class="problem-section">
+ <!-- === PROBLEM SECTION: Animated Chart + Typing Text (Professional) === -->
+<section id="problem" class="problem-v4">
   <div class="container">
-    <h2 class="problem-title">The Problem — Why This Matters</h2>
+    <h2 class="pv-title">The Problem — Why This Matters</h2>
+    <p class="pv-sub">Child safety failures visualized — clear, urgent, and evidence‑based (illustrative).</p>
 
     <!-- Chart -->
-    <canvas id="kidnapChart"></canvas>
+    <div class="chart-wrap">
+      <canvas id="kidnapChart" aria-label="Rising trend chart" role="img"></canvas>
+      <div class="chart-legend">
+        <span class="legend-dot global"></span> Global reports (illustrative)
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <span class="legend-dot uzb"></span> Uzbekistan (estimate — replace with local data)
+      </div>
+    </div>
 
-    <!-- Typed Text -->
-    <div id="typedText" class="typed-text"></div>
+    <!-- Typed explanation (will animate) -->
+    <div class="typing-box" aria-live="polite">
+      <div id="typedText" class="typed-text"></div>
+      <div class="typed-note">Note: Uzbekistan series shown as an illustrative estimate. We will replace it with verified national data when available.</div>
+    </div>
   </div>
 </section>
+
 
 
   <section class="section bg-light">
