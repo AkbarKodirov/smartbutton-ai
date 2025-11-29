@@ -173,5 +173,87 @@ a { text-decoration:none; color:inherit; }
   .pv-title { font-size: 1.9rem; }
   .typed-text { font-size:1rem; }
 }
+/* ——— NEW PROBLEM SECTION (2025 Evidence-Based) ——— */
+.problem-section-new {
+  padding: 140px 5% 100px;
+  background: linear-gradient(135deg, #f8faff 0%, #eef4ff 100%);
+  text-align: center;
+}
+.problem-lead {
+  font-size: 1.35rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  color: #1e293b;
+  line-height: 1.7;
+}
+.chart-container {
+  max-width: 960px;
+  margin: 0 auto 4rem;
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 15px 40px rgba(37,99,235,.08);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 5rem;
+}
+.stat-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(37,99,235,.07);
+  transition: transform .3s;
+}
+.stat-card:hover { transform: translateY(-8px); }
+.stat-card h3 { font-size: 2.8rem; color: var(--blue); margin-bottom: .5rem; }
+.stat-card.highlight { background: #fffae6; border: 2px solid #fbbf24; }
+.usecases { margin: 5rem 0; }
+.usecase-title { font-size: 2.2rem; margin-bottom: 2.5rem; color: #0f172a; }
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.usecase-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(37,99,235,.07);
+  transition: .3s;
+}
+.usecase-item:hover { transform: translateY(-6px); }
+.usecase-icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+.usecase-item strong { display: block; font-size: 1.25rem; margin-bottom: .5rem; color: #0f172a; }
+.disclaimer {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 1.8rem;
+  background: #fef3c7;
+  border-radius: 16px;
+  border-left: 5px solid #f59e0b;
+  font-size: 1.05rem;
+  color: #92400e;
+}
+.sources {
+  margin-top: 4rem;
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sources h4 { margin-bottom: 1rem; color: #0f172a; }
+.sources ul { list-style: none; padding-left: 0; }
+.sources li { margin: .8rem 0; }
+.sources a { color: var(--blue); text-decoration: underline; }
 
+@media (max-width: 768px) {
+  .problem-section-new { padding: 100px 5% 80px; }
+  .stat-card h3 { font-size: 2.2rem; }
+}
 
