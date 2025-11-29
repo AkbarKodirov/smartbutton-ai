@@ -301,5 +301,32 @@ a { text-decoration:none; color:inherit; }
   .typed-text { font-size: 1rem; }
   .chart-wrap.v6 { padding: 0 6px; }
 }
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto 1rem auto;
+    border: 3px solid #e5e7eb; /* light border */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    .icon-card, .demo-card {
+        margin: 0 1rem;
+    }
+    .section-title {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+    }
+}
+
 
 
