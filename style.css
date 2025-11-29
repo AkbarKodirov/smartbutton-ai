@@ -162,7 +162,7 @@ a { text-decoration:none; color:inherit; }
 .chart-legend { margin-top:8px; font-size:0.95rem; color:#213447; opacity:0.9; }
 .legend-dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:6px; vertical-align:middle; }
 .legend-dot.global { background: #4dd0ff; box-shadow: 0 2px 8px rgba(77,208,255,0.22); }
-.legend-dot.uzb { background: #0a5fff; box-shadow: 0 2px 8px rgba(10,95,255,0.14); }
+.legend-dot.uzb { background: #ff4d4d; box-shadow: 0 2px 8px rgba(10,95,255,0.14); }
 
 .typing-box { max-width: 900px; margin: 18px auto 0; min-height:110px; }
 .typed-text { font-size:1.15rem; color:#0b2140; line-height:1.7; white-space:pre-wrap; text-align:left; margin: 0 auto; }
