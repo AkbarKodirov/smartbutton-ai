@@ -328,5 +328,21 @@ a { text-decoration:none; color:inherit; }
     }
 }
 
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+}
+
+
 
 
