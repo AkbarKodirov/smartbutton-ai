@@ -114,7 +114,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          animation: { duration: 5000, easing: 'easeOutQuart' }, // slower, smoother
+          animation: { duration: 8000, easing: 'easeOutQuart' }, // slower, smoother
           plugins: {
             legend: { position: 'top', labels: { font: { size: 13 } } },
             tooltip: {
@@ -176,7 +176,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         if (ci < line.length) {
           typedEl.innerHTML += line.charAt(ci);
           ci++;
-          setTimeout(typeStep, 28);
+          setTimeout(typeStep, 45);
         } else {
           typedEl.innerHTML += "\n\n";
           li++; ci = 0;
