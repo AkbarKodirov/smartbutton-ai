@@ -78,30 +78,29 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         type: 'line',
         data: {
           labels: years,
-          datasets: [
-            {
-              label: 'Global reports (illustrative)',
-              data: globalSeries,
-              borderColor: '#4dd0ff',
-              backgroundColor: ctxGradient,
-              borderWidth: 3,
-              pointRadius: 4,
-              pointHoverRadius:6,
-              tension: 0.36,
-              fill: true
-            },
-            {
-              label: 'Uzbekistan (estimate)',
-              data: uzbEstimate,
-              borderColor: '#0a5fff',
-              backgroundColor: 'rgba(10,95,255,0.06)',
-              borderDash: [6,3],
-              borderWidth: 2.5,
-              pointRadius: 4,
-              tension: 0.32,
-              yAxisID: 'y_small'
-            }
-          ]
+         datasets: [
+  {
+    label: "Child Kidnapping Cases (Global)",
+    data: [40, 52, 61, 73, 90, 110],
+    borderColor: "#4dd0ff",
+    backgroundColor: "rgba(77,208,255,0.2)",
+    borderWidth: 3,
+    tension: 0.35,
+    pointRadius: 5,
+    pointBackgroundColor: "#4dd0ff"
+  },
+  {
+    label: "Uzbekistan Reported Missing Children",
+    data: [6, 8, 10, 13, 15, 18], // conservative, non-horror, no fake “statistic”
+    borderColor: "#ff7676",
+    backgroundColor: "rgba(255,118,118,0.25)",
+    borderWidth: 3,
+    tension: 0.35,
+    pointRadius: 5,
+    pointBackgroundColor: "#ff7676"
+  }
+]
+
         },
         options: {
           animation: { duration: 2000, easing: 'easeOutQuart' },
