@@ -30,3 +30,30 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+// ————— NEW: Problem Section Animations —————
+const problemObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Animate diagram steps sequentially
+      document.querySelectorAll('.diagram-item').forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add('visible');
+        }, index * 300);
+      });
+
+      // Animate text paragraphs
+      document.querySelectorAll('.reveal-text').forEach((p, index) => {
+        setTimeout(() => {
+          p.classList.add('visible');
+        }, 800 + index * 400);
+      });
+
+      problemObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const problemSection = document.querySelector('#problem');
+  if (problemSection) problemObserver.observe(problemSection);
+});
