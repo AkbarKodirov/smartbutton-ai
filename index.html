@@ -8,30 +8,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- === PROBLEM SECTION V4 === -->
-<section id="problem" class="problem-v4">
-  <div class="container">
-
-    <h2 class="title">The Problem</h2>
-    <p class="subtitle">Child safety failures visualized in real time</p>
-
-    <!-- Animated Line Chart -->
-    <div class="chart-box">
-      <canvas id="kidnapChart"></canvas>
-    </div>
-
-    <!-- Animated Typing Explanation -->
-    <div class="typing-box">
-      <span id="typedText"></span>
-      <span class="cursor">|</span>
-    </div>
-
-  </div>
-</section>
-
-
   <nav class="navbar" id="navbar">
     <div class="logo">SmartButton<span>.AI</span></div>
     <ul class="nav-links">
@@ -52,26 +28,18 @@
   </section>
 
   <!-- PROBLEM & SOLUTION -->
-  <section id="problem" class="section">
-    <div class="container">
-      <h2 class="section-title">Problem — Why this matters</h2>
-      <div class="grid">
-        <div class="icon-card" data-aos>
-          <div class="icon">⚠️</div>
-          <p>
-            In Uzbekistan and many countries child abduction and disappearance remain serious problems.
-            Existing trackers are often large, obvious, easy to remove, expensive, and lack intelligent early‑warning.
-          </p>
-        </div>
-        <div class="icon-card" data-aos>
-          <div class="icon">🔍</div>
-          <p>
-            Parents need a simple, discreet, reliable device that provides real‑time awareness and instant alerts without burdening the child.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+ <section id="problem" class="problem-section">
+  <div class="container">
+    <h2 class="problem-title">The Problem — Why This Matters</h2>
+
+    <!-- Chart -->
+    <canvas id="kidnapChart"></canvas>
+
+    <!-- Typed Text -->
+    <div id="typedText" class="typed-text"></div>
+  </div>
+</section>
+
 
   <section class="section bg-light">
     <div class="container">
