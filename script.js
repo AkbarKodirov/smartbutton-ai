@@ -34,225 +34,162 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // your old JS code above…
 
 // ===== ANIMATED LINE CHART =====
-// ===== PROBLEM SECTION: Chart + Typing (Professional) =====
-;(function(){
-  // dynamically load Chart.js if not already present
-  const loadChart = () => {
+// ===== PROBLEM SECTION V6: Chart + Typing animation (professional) =====
+(function(){
+  // load Chart.js if not present
+  async function loadChartLib(){
+    if (window.Chart) return window.Chart;
     return new Promise((resolve, reject) => {
-      if (window.Chart) return resolve(window.Chart);
       const s = document.createElement('script');
       s.src = 'https://cdn.jsdelivr.net/npm/chart.js';
       s.onload = () => resolve(window.Chart);
       s.onerror = reject;
       document.head.appendChild(s);
     });
-  };
-
-  // ILLUSTRATIVE DATA (replace with real data where noted)
-  // Global series: illustrative "reports" counts (trend shape only)
-  const globalSeries = [8000000, 8200000, 8400000, 8800000, 9300000, 9800000]; // illustrative — source: global estimates (ICMEC-style proxy)
-  const years = ["2017","2018","2019","2020","2021","2022"];
-
-  // UZBEKISTAN series: **ESTIMATE** — DO NOT present as official without verifying
-  // Replace these numbers with verified Uzbekistan totals if you find them.
-  const uzbEstimate = [120,140,160,185,210,240]; // illustrative counts per year (example only)
-
-  // format for axis (shows compact numbers)
-  function human(n){
-    if (n >= 1000000) return (n/1000000).toFixed(1)+'M';
-    if (n >= 1000) return (n/1000).toFixed(1)+'k';
-    return n;
   }
 
-  // create chart + animate
+  // Chart + typing setup
   document.addEventListener('DOMContentLoaded', async () => {
+    // TYPING TEXT LINES (polished, concise)
+    const lines = [
+      "Global context: public reports estimate around 8–10 million children reported missing worldwide each year.",
+      "Local reality: verified, centralized national statistics for Uzbekistan are limited or not publicly centralized — a data gap we must acknowledge.",
+      "Why this matters: when incidents happen (or when children go off expected routes), parents and schools often learn too late.",
+      "SmartButton.AI addresses both extremes: discreet early‑warning for critical emergencies and day‑to‑day school‑time presence & geofence monitoring for peace of mind."
+    ];
+
+    // typing element
+    const typedEl = document.getElementById('typedText');
+
+    // start typing only after chart is drawn a bit, to sync visuals
+    // load chart lib, then draw chart
     try {
-      const ChartLib = await loadChart();
-      const ctx = document.getElementById('kidnapChart').getContext('2d');
+      await loadChartLib();
 
-      const ctxGradient = ctx.createLinearGradient(0,0,0,420);
-      ctxGradient.addColorStop(0, 'rgba(77,208,255,0.28)');
-      ctxGradient.addColorStop(1, 'rgba(10,95,255,0.02)');
+      // DATA (transparent): global counts (millions) — public estimates (e.g., ICMEC)
+      const years = ['2019','2020','2021','2022','2023','2024'];
+      const globalSeries = [8.1, 8.4, 8.7, 9.1, 9.6, 10.1]; // millions (estimate from public reports)
+      // Uzbekistan series here is a *safety-tech adoption % illustrative estimate* (not crime counts)
+      // This is intentionally an adoption/coverage proxy to show local gap and opportunity.
+      const uzbAdoptionPct = [3, 5, 8, 12, 18, 26]; // illustrative (%)
 
-      const chart = new ChartLib(ctx, {
+      const ctx = document.getElementById('safetyChart').getContext('2d');
+
+      // gradient for global area
+      const grad = ctx.createLinearGradient(0,0,0,420);
+      grad.addColorStop(0, 'rgba(59,130,246,0.14)');
+      grad.addColorStop(1, 'rgba(59,130,246,0.02)');
+
+      const chart = new Chart(ctx, {
         type: 'line',
         data: {
           labels: years,
-         datasets: [
-  {
-    label: "Child Kidnapping Cases (Global)",
-    data: [40, 52, 61, 73, 90, 110],
-    borderColor: "#4dd0ff",
-    backgroundColor: "rgba(77,208,255,0.2)",
-    borderWidth: 3,
-    tension: 0.35,
-    pointRadius: 5,
-    pointBackgroundColor: "#4dd0ff"
-  },
-  {
-    label: "Uzbekistan Reported Missing Children",
-    data: [6, 8, 10, 13, 15, 18], // conservative, non-horror, no fake “statistic”
-    borderColor: "#ff7676",
-    backgroundColor: "rgba(255,118,118,0.25)",
-    borderWidth: 3,
-    tension: 0.35,
-    pointRadius: 5,
-    pointBackgroundColor: "#ff7676"
-  }
-]
-
+          datasets: [
+            {
+              label: 'Global estimates (millions)',
+              data: globalSeries,
+              borderColor: '#3b82f6',
+              backgroundColor: grad,
+              borderWidth: 3.5,
+              tension: 0.36,
+              pointRadius: 5,
+              pointBackgroundColor: '#3b82f6',
+              yAxisID: 'y_global',
+              fill: true
+            },
+            {
+              label: 'Uzbekistan adoption (%) — illustrative',
+              data: uzbAdoptionPct,
+              borderColor: '#ef4444',
+              backgroundColor: 'rgba(239,68,68,0.06)',
+              borderWidth: 3,
+              tension: 0.32,
+              pointRadius: 4,
+              pointBackgroundColor: '#ef4444',
+              borderDash: [6,4],
+              yAxisID: 'y_percent'
+            }
+          ]
         },
         options: {
-         animation: {
-  duration: 6000,     // slower (6s)
-  easing: "easeOutCubic",
-  delay: 300          // small delay before start
-},
           responsive: true,
           maintainAspectRatio: false,
+          animation: { duration: 5000, easing: 'easeOutQuart' }, // slower, smoother
           plugins: {
-            legend: { display: false },
+            legend: { position: 'top', labels: { font: { size: 13 } } },
             tooltip: {
+              mode: 'index',
+              intersect: false,
               callbacks: {
                 label: function(ctx){
-                  const val = ctx.parsed.y;
-                  return ctx.dataset.label + ': ' + human(val);
+                  if (ctx.dataset.yAxisID === 'y_percent') {
+                    return ctx.dataset.label + ': ' + ctx.parsed.y + '%';
+                  } else {
+                    return ctx.dataset.label + ': ~' + ctx.parsed.y + 'M';
+                  }
                 }
               }
             }
           },
+          interaction: { mode: 'index', intersect: false },
           scales: {
-            x: {
-              grid: { display: false },
-              ticks: { color: '#0b2140' }
-            },
-            y: {
+            y_global: {
+              type: 'linear',
               position: 'left',
               grid: { color: 'rgba(11,33,64,0.06)' },
               ticks: {
-                callback: function(v){ return human(v); },
+                callback: v => v + 'M',
                 color: '#0b2140'
               }
             },
-            // secondary small-axis for Uzbekistan scale (keeps UI readable)
-            y_small: {
+            y_percent: {
+              type: 'linear',
               position: 'right',
               grid: { display: false },
-              ticks: { color: '#0b2140' },
+              ticks: {
+                callback: v => v + '%',
+                color: '#0b2140'
+              },
               min: 0,
-              // set max slightly above max of uzbEstimate
-              max: Math.ceil(Math.max(...uzbEstimate) * 1.25)
+              max: Math.max(...uzbAdoptionPct) * 1.3
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#0b2140' }
             }
           }
         }
       });
 
-      // small reveal animation: draw datasets sequentially (by updating chart)
-      chart.data.datasets.forEach((ds, i) => {
-        ds.hidden = true;
-      });
+      // Reveal datasets sequentially for emphasis (fade-in)
+      chart.data.datasets.forEach(ds => ds.hidden = true);
       chart.update();
 
-      // reveal datasets one by one
-      setTimeout(()=> {
-        chart.data.datasets[0].hidden = false;
-        chart.update();
-      }, 400);
-      setTimeout(()=> {
-        chart.data.datasets[1].hidden = false;
-        chart.update();
-      }, 1100);
+      setTimeout(()=> { chart.getDatasetMeta(0).hidden = false; chart.update(); }, 400);
+      setTimeout(()=> { chart.getDatasetMeta(1).hidden = false; chart.update(); }, 1400);
+
+      // Typing animation: start after a short delay to sync with chart reveal
+      let li = 0, ci = 0;
+      function typeStep(){
+        if (li >= lines.length) return;
+        const line = lines[li];
+        if (ci < line.length) {
+          typedEl.innerHTML += line.charAt(ci);
+          ci++;
+          setTimeout(typeStep, 28);
+        } else {
+          typedEl.innerHTML += "\n\n";
+          li++; ci = 0;
+          setTimeout(typeStep, 650);
+        }
+      }
+      // small delay to let chart appear first
+      setTimeout(() => typeStep(), 1200);
 
     } catch (err) {
-      console.warn('Chart load failed', err);
+      console.error('Problem section script error', err);
     }
-
-    // ===== TYPING / NARRATIVE (polished lines) =====
-    const problemLines = [
-      "Every year, millions of children are reported missing worldwide — a rising, complex crisis.",
-      "Existing tools (CCTV, watches, visible trackers) often fail: they are obvious, removable, or slow to alert.",
-      "When danger occurs, parents typically learn too late — after the critical early minutes have passed.",
-      "SmartButton.AI provides a discreet, always‑on early‑warning: hidden GPS, instant SOS, and AI anomaly detection.",
-      "Local data is limited in many regions. We will obtain verified Uzbekistan figures during pilot deployment and swap into the chart."
-    ];
-
-    const typedEl = document.getElementById('typedText');
-    let li = 0, ci = 0;
-
-    function typeStep(){
-      if (li >= problemLines.length) return;
-      const line = problemLines[li];
-      if (ci < line.length) {
-        typedEl.innerHTML += line.charAt(ci);
-        ci++;
-        setTimeout(typeStep, 28);
-      } else {
-        typedEl.innerHTML += "\n\n";
-        li++; ci = 0;
-        setTimeout(typeStep, 650);
-      }
-    }
-    setTimeout(typeStep, 900);
   });
-
 })();
 
-// ——— NEW: Evidence-Based Safety Chart ———
-document.addEventListener('DOMContentLoaded', async () => {
-  // Load Chart.js only once
-  if (!window.Chart) {
-    const s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/chart.js';
-    await new Promise(r => { s.onload = r; document.head.appendChild(s); });
-  }
 
-  const ctx = document.getElementById('safetyChart')?.getContext('2d');
-  if (!ctx) return;
-
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
-      datasets: [
-        {
-          label: 'Global Missing Children Reports (est. millions)',
-          data: [8.1, 8.4, 8.7, 9.1, 9.6, 10.1],
-          borderColor: '#3b82f6',
-          backgroundColor: 'rgba(59,130,246,0.1)',
-          tension: 0.4,
-          borderWidth: 4,
-          pointRadius: 6,
-          fill: true
-        },
-        {
-          label: 'Uzbekistan Cases (illustrative gap)',
-          data: [null, null, null, null, null, null],
-          borderColor: '#ef4444',
-          borderDash: [8, 6],
-          borderWidth: 3,
-          pointRadius: 0,
-          fill: false
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: { duration: 2800, easing: 'easeOutQuart' },
-      plugins: {
-        legend: { position: 'top', labels: { font: { size: 14 } } },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              if (ctx.datasetIndex === 1) return 'No centralized public data';
-              return ctx.dataset.label + ': ~' + ctx.parsed.y + ' million';
-            }
-          }
-        }
-      },
-      scales: {
-        y: { beginAtZero: true, ticks: { callback: v => v + 'M' } }
-      }
-    }
-  });
-});
