@@ -27,31 +27,79 @@
     <div class="floating-shapes"><div class="shape"></div><div class="shape"></div></div>
   </section>
 
- <!-- === PROBLEM SECTION: Animated Chart + Typing Text (Professional) === -->
-<section id="problem" class="problem-v4">
+ <!-- PROBLEM SECTION: Evidence-based, transparent, visually rich -->
+<section id="problem" class="problem-section-new">
   <div class="container">
-    <h2 class="pv-title">The Problem — Why This Matters</h2>
-    <p class="pv-sub">Child safety failures visualized — clear, urgent, and evidence‑based.</p>
+    <h2 class="section-title">Global Child Safety Crisis + Local Reality</h2>
+    <p class="problem-lead">
+      Every year, millions of children go missing worldwide. In many regions — including Uzbekistan — official statistics are limited or not publicly centralized.
+    </p>
 
-    <!-- Chart -->
-    <div class="chart-wrap">
-      <canvas id="kidnapChart" aria-label="Rising trend chart" role="img"></canvas>
-      <div class="chart-legend">
-        <span class="legend-dot global"></span> Global reports 
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <span class="legend-dot uzb"></span> Uzbekistan 
+    <!-- Interactive Chart -->
+    <div class="chart-container">
+      <canvas id="safetyChart"></canvas>
+    </div>
+
+    <!-- Key Stats + Use Cases -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>8–10 million</h3>
+        <p>Children reported missing globally each year (ICMEC / UN estimates)</p>
+      </div>
+      <div class="stat-card">
+        <h3>~1 in 6</h3>
+        <p>Never found or recovered (global average)</p>
+      </div>
+      <div class="stat-card highlight">
+        <h3>Data Gap in Uzbekistan</h3>
+        <p>No centralized public database of missing children cases (2025)</p>
       </div>
     </div>
 
-    <!-- Typed explanation (will animate) -->
-    <div class="typing-box" aria-live="polite">
-      <div id="typedText" class="typed-text"></div>
-      <div class="typed-note">Note: Uzbekistan series shown as an illustrative estimate. We will replace it with verified national data when available.</div>
+    <!-- Everyday Use Cases (Broader Relevance) -->
+    <div class="usecases">
+      <h3 class="usecase-title">Beyond Abduction — Everyday Safety Needs</h3>
+      <div class="usecase-grid">
+        <div class="usecase-item">
+          <div class="usecase-icon">🏫</div>
+          <strong>School Arrival & Departure</strong>
+          <p>Know instantly when your child safely reaches school or leaves early</p>
+        </div>
+        <div class="usecase-item">
+          <div class="usecase-icon">🔔</div>
+          <strong>After-School Safe Zones</strong>
+          <p>Automatic alerts if child exits school/home geofence</p>
+        </div>
+        <div class="usecase-item">
+          <div for="usecase-icon">🆘</div>
+          <strong>One-Tap Emergency SOS</strong>
+          <p>Child presses hidden button → parent + authorities notified instantly</p>
+        </div>
+        <div class="usecase-item">
+          <div class="usecase-icon">❤️</div>
+          <strong>Peace of Mind</strong>
+          <p>Parents stay calm knowing real-time protection is always active</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transparent Disclaimer -->
+    <div class="disclaimer">
+      <p><strong>Data Transparency Note:</strong> Global figures are estimates from ICMEC, UNODC, and Missing Children Europe. No verified national statistics for Uzbekistan are publicly available as of November 2025. Local incidents are known through media and NGO reports but not systematically tracked. We will collect verified pilot data during MVP deployment.</p>
+    </div>
+
+    <!-- Sources -->
+    <div class="sources">
+      <h4>Sources & References</h4>
+      <ul>
+        <li><a href="https://www.icmec.org/missing-children-statistics/" target="_blank">ICMEC – Global Missing Children Statistics</a></li>
+        <li><a href="https://ec.europa.eu/info/policies/justice-and-fundamental-rights/criminal-justice/missing-children_en" target="_blank">Missing Children Europe Annual Report</a></li>
+        <li><a href="https://www.unodc.org/documents/data-and-analysis/statistics/crime/CTS2023/Trafficking_in_Persons_2023.xlsx" target="_blank">UNODC Global Report on Trafficking in Persons</a></li>
+        <li>Local reporting: Kun.uz, Gazeta.uz, UNICEF Uzbekistan (qualitative insights)</li>
+      </ul>
     </div>
   </div>
 </section>
-
-
 
   <section class="section bg-light">
     <div class="container">
