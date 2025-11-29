@@ -104,7 +104,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         },
         options: {
          animation: {
-  duration: 4200,     // slower (4.2s)
+  duration: 6000,     // slower (6s)
   easing: "easeOutCubic",
   delay: 300          // small delay before start
 },
