@@ -7,7 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="logo">SmartButton<span>.AI</span></div>
     <ul class="nav-links">
@@ -17,66 +19,132 @@
     </ul>
   </nav>
 
+  <!-- CURRENT STAGE -->
   <section class="section">
     <div class="container">
       <h2 class="section-title">Current Stage</h2>
-      <p class="large-text text-center">Prototype / MVP — Device simulation, backend scaffold, AI detection prototype, and parent dashboard skeleton.</p>
+      <p class="large-text text-center">
+        <strong>Prototype / MVP</strong> — We have built a working device simulation, backend structure, early anomaly‑detection AI, and a parent dashboard skeleton.
+      </p>
     </div>
   </section>
 
+  <!-- ROADMAP -->
   <section class="section bg-light">
     <div class="container">
       <h2 class="section-title">Roadmap & Next Steps</h2>
+
       <div class="timeline">
-        <div class="tl-item" data-aos><span>Nov 26–30</span> Stage 1 — Demo website & plan (this submission)</div>
-        <div class="tl-item" data-aos data-aos-delay="100"><span>Dec 1–5</span> Build device simulator (Python) + backend API (Node.js)</div>
-        <div class="tl-item" data-aos data-aos-delay="200"><span>Dec 6–9</span> Integrate basic AI microservice (anomaly detection) & dashboard map</div>
-        <div class="tl-item active" data-aos data-aos-delay="300"><span>Dec 10–13</span> Finals prep — demo video, pitch, live demo</div>
+        <div class="tl-item" data-aos>
+          <span>Nov 26–30</span>
+          Stage 1 — Demo website, system plan, hardware concept.
+        </div>
+
+        <div class="tl-item" data-aos data-aos-delay="100">
+          <span>Dec 1–5</span>
+          Build Python device simulator + backend API (Node.js).
+        </div>
+
+        <div class="tl-item" data-aos data-aos-delay="200">
+          <span>Dec 6–9</span>
+          Integrate basic AI anomaly detection + dashboard map.
+        </div>
+
+        <div class="tl-item active" data-aos data-aos-delay="300">
+          <span>Dec 10–13</span>
+          Finals — pitch deck, demo video, live working prototype.
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- MVP FEATURES -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">What we will build (MVP)</h2>
+      <h2 class="section-title">What We Will Build (MVP)</h2>
+
       <div class="grid">
         <div class="tech-card" data-aos>
           <h3>1) Device Simulation</h3>
-          <p>Python script that emits GPS, battery, movement, and SOS events to our API.</p>
+          <p>Python script that emits GPS, battery level, movement events, and SOS triggers to our API in real-time.</p>
         </div>
+
         <div class="tech-card" data-aos>
-          <h3>2) Backend & DB</h3>
-          <p>Node.js + Express endpoints: /location, /sos, /authenticate. Store to MySQL/Postgres.</p>
+          <h3>2) Backend & Database</h3>
+          <p>Node.js + Express API for location, SOS, authentication, and history. Data stored in Postgres/MySQL.</p>
         </div>
+
         <div class="tech-card" data-aos>
           <h3>3) AI Microservice</h3>
-          <p>Python microservice for anomaly detection: geofence exit, speed anomaly, tamper detection. Simple heuristics + lightweight ML model.</p>
+          <p>Python-based anomaly detection: geofence exit, speed anomaly, tamper detection. Uses heuristic + light ML.</p>
         </div>
+
         <div class="tech-card" data-aos>
           <h3>4) Parent Dashboard</h3>
-          <p>React web dashboard with live map, SOS alerts, safe‑zone setup, history and user management.</p>
+          <p>React dashboard with live map, SOS feed, child timeline, and safe‑zone management.</p>
         </div>
       </div>
+
+      <!-- HARDWARE MVP BLOCK -->
+      <div class="tech-card" style="margin-top:2rem;" data-aos>
+        <h3>5) Hardware MVP (Arduino Prototype)</h3>
+        <p>
+          Early physical device using:
+          <br>• Arduino board  
+          <br>• GPS module (NEO‑6M)  
+          <br>• GSM module (SIM800L)  
+          <br><br>
+          Sends real-time coordinates via SMS/GPRS and supports SOS events.  
+          Validates the core tracking & emergency alert system before custom PCB development.
+        </p>
+
+        <!-- No real image: clean placeholder -->
+        <div class="placeholder-img" style="
+            width:100%;
+            height:260px;
+            border-radius:10px;
+            background:#e5e5e5;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:1.1rem;
+            font-weight:600;
+            color:#555;
+            margin-top:12px;">
+          Hardware MVP Placeholder
+        </div>
+      </div>
+
     </div>
-
-    <div class="tech-card" data-aos>
-  <h3>5) Hardware MVP (Arduino Prototype)</h3>
-  <p>Built using Arduino + GPS (NEO‑6M) + GSM (SIM800L). Sends Google Maps coordinates via SMS + supports SOS events. This validates our core idea before creating a custom chip/PCB.</p>
-  <img src="https://via.placeholder.com/700x350" style="width:100%; margin-top:10px; border-radius:10px;">
-</div>
-
   </section>
 
+  <!-- SYSTEM ARCHITECTURE -->
   <section class="section bg-light">
-  <div class="container">
-    <h2 class="section-title">System Architecture</h2>
-    <img src="https://via.placeholder.com/900x450"
-         style="width:100%; border-radius:12px; margin-bottom:1.5rem;">
-    <p class="text-center">From device → backend → AI → parent dashboard. Clear flow demonstrating technical feasibility.</p>
-  </div>
-</section>
+    <div class="container">
+      <h2 class="section-title">System Architecture</h2>
 
+      <div class="placeholder-img" style="
+          width:100%;
+          height:350px;
+          border-radius:12px;
+          background:#e5e5e5;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-size:1.2rem;
+          font-weight:600;
+          color:#555;
+          margin-bottom:1.5rem;">
+        System Diagram Placeholder
+      </div>
 
+      <p class="text-center">
+        End‑to‑end pipeline: Device → Backend → AI Engine → Parent Dashboard.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <p>© 2025 SmartButton.AI • AI500 Hackathon</p>
   </footer>
