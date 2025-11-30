@@ -1,3 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartButton.AI — Hidden AI Safety Button for Children</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="logo">SmartButton<span>.AI</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="project.html">Project</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>SmartButton.AI</h1>
+      <p>Hidden, button‑sized wearable that protects children with real‑time tracking, SOS alerts, and AI‑powered danger detection.</p>
+      <a href="#problem" class="btn-primary">See How It Works</a>
+    </div>
+    <div class="floating-shapes"><div class="shape"></div><div class="shape"></div></div>
+  </section>
+
+ <!-- === PROBLEM SECTION: Animated Chart + Typing Text (Top-3 ready) === -->
+<section id="problem" class="problem-v6">
+  <div class="container">
+    <h2 class="pv-title">The Problem — Why This Matters</h2>
+    <p class="pv-sub">Millions of children are reported missing globally each year. Local national statistics are often limited or not publicly centralized — we show global evidence and a clear local gap/need.</p>
+
+    <!-- Chart + legend -->
+    <div class="chart-wrap v6">
+      <canvas id="safetyChart" aria-label="Chart showing global missing children and local safety-tech adoption" role="img"></canvas>
+      <div class="chart-legend v6">
+        <span class="legend-dot global"></span> Global missing children (millions)
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <span class="legend-dot uzb"></span> Uzbekistan: safety‑tech adoption (%) — illustrative
+      </div>
+    </div>
+
+    <!-- Typed explanation (animated) -->
+    <div class="typing-box v6" aria-live="polite">
+      <div id="typedText" class="typed-text"></div>
+      <div class="typed-note">Note: Global figures drawn from public reports (e.g., ICMEC). Uzbekistan adoption shown as illustrative percentages to highlight the market & coverage gap — we will replace with verified national data after pilot collection.</div>
+    </div>
+
+    <!-- compact source links -->
+    <div class="sources-compact">
+      <strong>Sources:</strong>
+      <a href="https://www.icmec.org/missing-children-statistics/" target="_blank" rel="noopener">ICMEC — missing children</a>
+      &nbsp;•&nbsp;
+      <a href="https://www.unodc.org" target="_blank" rel="noopener">UNODC</a>
+      &nbsp;•&nbsp; local media / NGO reports (pilot to follow)
+    </div>
+  </div>
+</section>
+
+
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Our Solution — SmartButton.AI</h2>
+      <div class="grid">
+        <div class="demo-card" data-aos>
+          <h3>What it is</h3>
+          <p>SmartButton.AI is a mini, hidden, button‑sized wearable that attaches to clothing and connects to a secure parent app.</p>
+        </div>
+        <div class="demo-card" data-aos>
+          <h3>Core features</h3>
+          <ul>
+            <li>Live GPS tracking</li>
+            <li>One‑tap SOS alert</li>
+            <li>AI‑powered anomaly detection</li>
+            <li>Safe‑zone (geo‑fence) warnings</li>
+            <li>Tamper detection</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="project.html" class="btn-primary large">Roadmap & MVP →</a>
+      </div>
+    </div>
+  </section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">How it works (simple)</h2>
+
+    <div class="grid">
 <div class="icon-card" data-aos>
         <h3>1. Child wears the button</h3>
         <p>The device is attached to clothing like a normal button — discreet and hard to notice.</p>
@@ -24,13 +119,6 @@
              alt="SmartButton illustration"
              style="width:100%; border-radius:12px;">
       </div>
-
-      <div class="icon-card" data-aos>
-  <h3>Hardware Prototype (MVP)</h3>
-  <p>The first version is built using Arduino + GPS + GSM module (SIM800L). It sends real-time coordinates via SMS/GPRS. This MVP proves the core functionality before miniaturization.</p>
-  <img src="https://via.placeholder.com/600x350" style="width:100%; border-radius:10px; margin-top:10px;">
-</div>
-
 
     </div>
   </div>
