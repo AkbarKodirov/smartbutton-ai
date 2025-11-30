@@ -353,6 +353,13 @@ a { text-decoration:none; color:inherit; }
   width: 100%;
   border-radius: 16px;
 }
+.full-width-card {
+  grid-column: 1 / -1;
+}
+
+.icon-card img, .tech-card img {
+  object-fit: cover;
+}
 
 
 
